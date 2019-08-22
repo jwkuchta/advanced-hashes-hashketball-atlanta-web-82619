@@ -1,7 +1,20 @@
-num = [2, 4, 6, 8]
+alice = [3, 4, 6]
+bob = [1, 5, 6]
 
-def sum(ar)
-  ar.reduce(0) {|sum, el| sum + el}
+def compareTriplets(a, b)
+  sum_a = 0
+  sum_b = 0
+  i = 0
+  result = []
+  while i < a.length do
+    if a[i] > b[i]
+      sum_a += 1
+    else if a[i] < b[i]
+      sum_b += 1
+    end
+    i +=1
+  end
+  return result.push(sum_a, sum_b)
 end
 
-puts sum(num)
+puts compareTriplets(alice, bob)
