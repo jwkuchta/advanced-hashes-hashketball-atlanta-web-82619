@@ -9,7 +9,7 @@ def compareTriplets(a, b)
   while i < a.length do
     if a[i] > b[i]
       sum_a += 1
-    else if a[i] < b[i]
+    elsif a[i] < b[i]
       sum_b += 1
     end
     i +=1
