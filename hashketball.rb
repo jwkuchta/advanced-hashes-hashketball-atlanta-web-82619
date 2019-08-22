@@ -63,11 +63,7 @@ def player_numbers(team_name)
   game_hash.each do |home_away, data|
     if data[:team_name] == team_name
       data[:players].each do |player|
-        player.each do |key, value|
-          if key == :number
-            players_numbers.push(value)
-          end
-        end
+          players_numbers << player[:number]
       end
     end
   end
@@ -77,7 +73,7 @@ end
 def player_stats(name)
   game_hash.each do |home_away, data|
     data[:players].each do |player|
-      if player.has_value?(name)
+      if player[:player_name] == name
         player.delete(:player_name)
         return player
       end
@@ -134,6 +130,7 @@ def player_with_longest_name
       if player[:player_name].length > longest_name
         longest_name = player[:player_name].length
         winner = player[:player_name]
+        binding.pry
       end
     end
   end
