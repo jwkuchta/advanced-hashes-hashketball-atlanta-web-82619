@@ -14,7 +14,7 @@ def compareTriplets(a, b)
     end
     i +=1
   end
-  return result.push(sum_a, sum_b)
+  result.push(sum_a, sum_b)
 end
 
 puts compareTriplets(alice, bob)
